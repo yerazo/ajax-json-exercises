@@ -1,13 +1,12 @@
 $(document).ready(function(){
-  var productTemplate = $('template').html();
   $.get('http://portal.batchacademy.com/api/wdfne/test-data/items', function(items){
+    var itemTemplate = $('template#item').html();
   	for(var i = 0; i < items.length; i++){
-  		console.log(items[i]);
-  		var newProduct = $(productTemplate);
+  		var newItem = $(itemTemplate);
 
-  		$('.title', newProduct).text(items[i].name);
-  		$('.price', newProduct).text('$' + items[i].price.toFixed(2));
-  		$('.items').append(newProduct);
+  		$('.title', newItem).text(items[i].name);
+  		$('.price', newItem).text('$' + items[i].price.toFixed(2));
+  		$('.items').append(newItem);
   	}
   });
 });
