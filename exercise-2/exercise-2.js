@@ -6,7 +6,7 @@ $(document).ready(function(){
   		var newProduct = $(productTemplate);
 
   		$('.title', newProduct).text(items[i].name);
-  		$('.price', newProduct).text(items[i].price);
+  		$('.price', newProduct).text('$' + items[i].price.toFixed(2));
   		$('.items').append(newProduct);
   	}
   });
